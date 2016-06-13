@@ -30,6 +30,7 @@
     "browserify": "^13.0.1",
     "browserify-incremental": "^3.1.1",
     "history": "^3.0.0",
+    "marked": "^0.3.5",
     "moment": "^2.13.0",
     "random-js": "^1.0.8",
     "react": "^15.1.0",
