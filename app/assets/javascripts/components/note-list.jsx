@@ -10,7 +10,7 @@ export default class NoteList extends Component {
 
   render() {
     const notes = this.props.notes.map((note, i) => (
-      <Note {...note} />
+      <Note key={i} {...note} />
     ));
 
     return (

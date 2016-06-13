@@ -14,6 +14,10 @@ export default class Note extends Component {
     };
   }
 
+  componentDidMount() {
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  }
+
   render() {
     const {createdAt, text} = this.props;
 
