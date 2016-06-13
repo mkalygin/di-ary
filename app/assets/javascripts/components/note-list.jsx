@@ -1,4 +1,5 @@
 import { Component, PropTypes } from 'react';
+import Note from './note';
 
 export default class NoteList extends Component {
   static get propTypes() {
@@ -9,16 +10,11 @@ export default class NoteList extends Component {
 
   render() {
     const notes = this.props.notes.map((note, i) => (
-      <ul key={i}>
-        <li>{note.id}</li>
-        <li>{note.createdAt}</li>
-        <li>{note.text}</li>
-        <li>{note.comments}</li>
-      </ul>
+      <Note {...note} />
     ));
 
     return (
-      <div>
+      <div className="note-list">
         {notes}
       </div>
     );
