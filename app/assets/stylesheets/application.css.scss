@@ -19,15 +19,31 @@
 @import 'bootstrap';
 @import 'bootswatch';
 
-.app-logo {
-  .navbar-brand {
-    @include no-select();
+.navbar {
+  .app-logo {
+    .navbar-brand {
+      @include no-select();
 
-    color: $gray-light;
-    margin-left: 0 !important;
-
-    &:hover {
       color: $gray-light;
+      margin-left: 0 !important;
+
+      &:hover {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .navbar-nav {
+    margin-bottom: 0;
+
+    .write-note-btn {
+      @extend .btn-success;
+
+      font-weight: bolder;
+
+      &:hover, &:active, &:focus {
+        background-color: darken($brand-success, 10%) !important;
+      }
     }
   }
 }
@@ -46,7 +62,32 @@
       background-color: $gray-lightest !important;
     }
 
-    p {
+    .note-header {
+      @extend .text-muted;
+
+      h6 {
+        display: inline-block;
+      }
+
+      button {
+        @extend h1;
+        @extend .pull-right;
+
+        margin: -5px;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+      }
+    }
+
+    hr {
+      margin: 10px -15px;
+    }
+
+    .note-body {
       @extend .list-group-item-text;
     }
   }

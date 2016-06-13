@@ -1,5 +1,8 @@
 import marked from 'marked';
+import moment from 'moment';
 import { Component, PropTypes } from 'react';
+
+const dateFormat = 'MMMM Do YYYY, h:mm:ss a';
 
 export default class Note extends Component {
   static get propTypes() {
@@ -15,9 +18,16 @@ export default class Note extends Component {
     const {createdAt, text} = this.props;
 
     return (
-      <a className="note" href="#">
-        <p dangerouslySetInnerHTML={{__html: marked(text)}}></p>
-      </a>
+      <div className="note">
+        <div className="note-header">
+          <h6>{moment(createdAt).format(dateFormat)}</h6>
+          <button>&times;</button>
+        </div>
+        <hr />
+        <div className="note-body">
+          <p dangerouslySetInnerHTML={{__html: marked(text)}}></p>
+        </div>
+      </div>
     );
   }
 }
