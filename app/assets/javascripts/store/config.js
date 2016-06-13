@@ -7,7 +7,7 @@ import root from '../reducers/root';
 const createAppStore = compose(
   applyMiddleware(thunk),
   reduxReactRouter({createHistory}),
-  window.devToolsExtension && window.devToolsExtension()
+  window.devToolsExtension ? window.devToolsExtension() : f => f
 )(createStore);
 
 export default function configureStore(initialState){
