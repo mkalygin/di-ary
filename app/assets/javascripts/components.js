@@ -1,1 +1,1 @@
-window.Root = require('containers/root.js').default;
+window.Root = require('containers/root.jsx').default;

@@ -1,8 +1,16 @@
-import { createStore } from 'redux';
-import reducer from '../reducers/root';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { reduxReactRouter } from 'redux-react-router';
+import { createHistory } from 'history';
+import thunk from 'redux-thunk';
+import root from '../reducers/root';
 
-export default function configureStore(initialState) {
-  return createStore(reducer, initialState,
-    window.devToolsExtension && window.devToolsExtension()
-  );
+const createAppStore = compose(
+  applyMiddleware(thunk),
+  reduxReactRouter({createHistory}),
+  window.devToolsExtension && window.devToolsExtension()
+)(createStore);
+
+export default function configureStore(initialState){
+  const store = createAppStore(root, initialState);
+  return store;
 }

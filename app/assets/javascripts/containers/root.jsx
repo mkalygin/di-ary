@@ -1,20 +1,28 @@
-import { Component } from 'react';
+import { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import CounterApp from './counter-app';
+import DiaryApp from './diary-app';
 import configureStore from '../store/config';
-import {setCounter} from '../actions/counter';
+import { fetchNotes } from '../actions/note-list';
 
 const store = configureStore();
 
 export default class Root extends Component {
-  componentWillMount() {
-    store.dispatch(setCounter(this.props.counter));
+  static get propTypes() {
+    return {
+      notesUrl: PropTypes.string.isRequired
+    };
   }
+
+  componentWillMount() {
+    const {notesUrl} = this.props;
+    store.dispatch(fetchNotes(notesUrl));
+  }
+
   render() {
     return (
       <Provider store={store}>
-        <CounterApp />
+        <DiaryApp />
       </Provider>
     );
   }

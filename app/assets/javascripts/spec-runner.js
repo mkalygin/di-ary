@@ -1,7 +1,5 @@
-import requireDir from 'require-dir';
-
 // Import all specs modules.
-const specModules = requireDir('specs');
+import * as specs from './specs';
 
 // Make objects iterable for readability.
 Object.prototype[Symbol.iterator] = function* () {
@@ -11,10 +9,8 @@ Object.prototype[Symbol.iterator] = function* () {
 };
 
 try {
-  for (let [, module] of specModules) {
-    for (let [, spec] of module.default) {
-      spec();
-    }
+  for (let [, spec] of specs) {
+    spec();
   }
 
   console.log('OK');

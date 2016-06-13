@@ -1,6 +1,4 @@
 import { combineReducers } from 'redux';
-import counter from './counter';
+import noteList from './note-list';
 
-export default combineReducers({
-  counter
-});
+export default combineReducers({notes: noteList});
