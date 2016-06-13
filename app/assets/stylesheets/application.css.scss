@@ -59,6 +59,10 @@
 
     margin-bottom: 21px;
 
+    &:last-child {
+      margin-bottom: 21px !important;
+    }
+
     &:hover {
       background-color: $gray-lightest !important;
     }
