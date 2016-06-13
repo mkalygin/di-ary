@@ -49,8 +49,9 @@
 }
 
 .note-list {
-  @extend .col-xs-8;
-  @extend .col-xs-offset-2;
+  @extend .col-xs-12;
+  @extend .col-sm-8;
+  @extend .col-sm-offset-2;
 
   .note {
     @extend .list-group-item;
