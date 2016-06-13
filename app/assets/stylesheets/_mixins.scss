@@ -1,6 +1,6 @@
 @import 'variables';
 
-@mixin no-select {
+@mixin no-select() {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -8,4 +8,10 @@
   -ms-user-select: none;
   user-select: none;
   cursor: default;
+}
+
+@mixin shadow-box($shadow: 0 1px 4px $gray-light) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
 }

@@ -19,13 +19,10 @@
 @import 'bootstrap';
 @import 'bootswatch';
 
-body {
-  background-color: $gray-lighter;
-}
-
 .app-logo {
   .navbar-brand {
-    @include no-select;
+    @include no-select();
+
     color: $gray-light;
     margin-left: 0 !important;
 
@@ -41,6 +38,13 @@ body {
 
   .note {
     @extend .list-group-item;
+    @include shadow-box();
+
+    margin-bottom: 21px;
+
+    &:hover {
+      background-color: $gray-lightest !important;
+    }
 
     p {
       @extend .list-group-item-text;
