@@ -1,24 +1,24 @@
-# README
+# Di-ary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## [DEMO](http://di-ary.herokuapp.com/)
 
-Things you may want to cover:
+Mathematical note-taking app built on Ruby on Rails, React, Redux and React Router. LocalStorage is used instead of server-side database.
 
-* Ruby version
+Notes format supports both Markdown and LaTeX using [marked](https://www.npmjs.com/package/marked) and [MathJax](https://www.mathjax.org/).
 
-* System dependencies
+# Quick Start
 
-* Configuration
+Prerequisites:
 
-* Database creation
+- Ruby on Rails v5.0
+- NPM & Node.js
 
-* Database initialization
+Install:
 
-* How to run the test suite
+  $ npm install
+  $ bundle install
+  $ bundle exec rails s
+  
+Usage:
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Run the server and navigate to `http://localhost:3000`.
