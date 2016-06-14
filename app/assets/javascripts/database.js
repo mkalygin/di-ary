@@ -18,7 +18,7 @@ export function save(key, data, isJson = false) {
 
 export function load(key, fallback = {}, isJson = false) {
   try {
-    const data = localStorage.getItem(key) || JSON.stringify(fallback);
+    const data = localStorage.getItem(key) || fallback;
     return isJson ? JSON.parse(data) : data;
   } catch (err) {
     console.log(err);
