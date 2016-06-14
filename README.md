@@ -1,6 +1,4 @@
-# Di-ary
-
-## [DEMO](http://di-ary.herokuapp.com/)
+# Di-ary ([DEMO](http://di-ary.herokuapp.com/))
 
 Mathematical note-taking app built on Ruby on Rails, React, Redux and React Router. LocalStorage is used instead of server-side database.
 
@@ -15,9 +13,9 @@ Prerequisites:
 
 Install:
 
-  $ npm install
-  $ bundle install
-  $ bundle exec rails s
+    $ npm install
+    $ bundle install
+    $ bundle exec rails s
   
 Usage:
 
