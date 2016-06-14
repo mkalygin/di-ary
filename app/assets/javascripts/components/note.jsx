@@ -19,6 +19,10 @@ export default class Note extends Component {
     MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
   }
 
+  componentWillUnmount() {
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+  }
+
   render() {
     const {id, createdAt, text, onCloseClick} = this.props;
 
