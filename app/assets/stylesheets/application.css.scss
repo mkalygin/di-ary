@@ -108,6 +108,8 @@ div[data-react-class="Root"] {
 
     .note-body {
       @extend .list-group-item-text;
+
+      word-wrap: break-word;
     }
   }
 }
@@ -162,6 +164,7 @@ div[data-react-class="Root"] {
       height: 100%;
       border: 1px solid $input-border;
       overflow: scroll;
+      word-wrap: break-word;
     }
   }
 }
