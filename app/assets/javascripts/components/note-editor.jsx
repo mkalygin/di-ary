@@ -39,6 +39,10 @@ export default class NoteEditor extends Component {
       onTextInput(textarea);
     };
 
+    setTimeout(() => {
+      MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+    }, 0);
+
     return (
       <div>
         <Header>

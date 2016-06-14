@@ -34,7 +34,6 @@ export default class Root extends Component {
       },
       onTextInput: function (textarea) {
         store.dispatch(editCurrentNote(textarea.value));
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
       }
     };
 
