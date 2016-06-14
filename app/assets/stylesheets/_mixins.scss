@@ -15,3 +15,8 @@
      -moz-box-shadow: $shadow;
           box-shadow: $shadow;
 }
+
+@mixin calc($property, $expression) {
+  #{$property}: -webkit-calc(#{$expression});
+  #{$property}: calc(#{$expression});
+}

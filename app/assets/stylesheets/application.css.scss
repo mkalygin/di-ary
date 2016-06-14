@@ -19,6 +19,18 @@
 @import 'bootstrap';
 @import 'bootswatch';
 
+html, body {
+  height: 100%;
+}
+
+div[data-react-class="Root"] {
+  height: 100%;
+
+  & > div {
+    height: 100%;
+  }
+}
+
 .navbar {
   .app-logo {
     .navbar-brand {
@@ -96,6 +108,59 @@
 
     .note-body {
       @extend .list-group-item-text;
+    }
+  }
+}
+
+.note-editor {
+  @extend .col-xs-12;
+  @include calc(height, '100% - 140px');
+
+  @media (max-width: $screen-xs-max) {
+    @include calc(height, '100% - 230px');
+  }
+
+  h4 {
+    @extend .text-center;
+
+    font-weight: normal;
+    margin-bottom: 21px;
+  }
+
+  .editor {
+    @extend .col-xs-6;
+    @extend .pull-left;
+
+    width: 50%;
+    height: 100%;
+
+    textarea {
+      @extend .form-control;
+
+      width: 100%;
+      height: 100%;
+      resize: none;
+    }
+
+    @media (max-width: $screen-xs-max) {
+      width: 100%;
+    }
+  }
+
+  .preview {
+    @extend .hidden-xs;
+    @extend .col-xs-6;
+    @extend .pull-right;
+
+    width: 50%;
+    height: 100%;
+
+    .output {
+      @extend .well;
+
+      width: 100%;
+      height: 100%;
+      border: 1px solid $input-border;
     }
   }
 }
