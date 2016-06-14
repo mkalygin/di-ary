@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import NoteList from '../components/note-list';
 import * as NoteListActions from '../actions/note-list';
 
-function mapStateToProps({notes}) {
-  return {notes};
+function mapStateToProps(state) {
+  return {...state};
 }
 
 function mapDispatchToProps(dispatch) {

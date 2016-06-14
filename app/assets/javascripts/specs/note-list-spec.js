@@ -1,10 +1,12 @@
 import expect from 'expect';
 import deepFreeze from 'deep-freeze';
+import { LocalStorage } from 'node-localstorage';
 import random from 'random-js';
 import moment from 'moment';
 import noteList from '../reducers/note-list';
 import ActionType from '../actions/action-types';
 
+global.localStorage = new LocalStorage('./local_storage');
 const uuid4Regex = /[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}/;
 const engine = random.engines.nativeMath;
 const uuid4 = () => random.uuid4(engine);

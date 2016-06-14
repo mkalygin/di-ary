@@ -1,7 +1,8 @@
 import { Component, PropTypes } from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import DiaryApp from './diary-app';
+import { Router, Route, Link, browserHistory } from 'react-router';
+import NoteList from './note-list';
 import configureStore from '../store/config';
 
 const store = configureStore();
@@ -16,7 +17,7 @@ export default class Root extends Component {
   render() {
     return (
       <Provider store={store}>
-        <DiaryApp {...this.props}/>
+        <NoteList {...this.props}/>
       </Provider>
     );
   }
