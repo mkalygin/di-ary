@@ -27,3 +27,17 @@ export function fetchNotes(url) {
       });
   };
 }
+
+export function createNote(text) {
+  return {
+    type: ActionType.CREATE_NOTE,
+    text
+  };
+}
+
+export function deleteNote(id) {
+  return {
+    type: ActionType.DELETE_NOTE,
+    id
+  };
+}

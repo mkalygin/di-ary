@@ -10,7 +10,8 @@ export default class Note extends Component {
       id: PropTypes.string.isRequired,
       createdAt: PropTypes.number.isRequired,
       text: PropTypes.string.isRequired,
-      comments: PropTypes.array.isRequired
+      comments: PropTypes.array.isRequired,
+      onCloseClick: PropTypes.func.isRequired
     };
   }
 
@@ -19,13 +20,13 @@ export default class Note extends Component {
   }
 
   render() {
-    const {createdAt, text} = this.props;
+    const {id, createdAt, text, onCloseClick} = this.props;
 
     return (
       <div className="note">
         <div className="note-header">
           <h6>{moment(createdAt).format(dateFormat)}</h6>
-          <button>&times;</button>
+          <button onClick={onCloseClick.bind(this, id)}>&times;</button>
         </div>
         <hr />
         <div className="note-body">

@@ -4,13 +4,22 @@ import Note from './note';
 export default class NoteList extends Component {
   static get propTypes() {
     return {
-      notes: PropTypes.array.isRequired
+      notesUrl: PropTypes.string.isRequired,
+      notes: PropTypes.array.isRequired,
+      fetchNotes: PropTypes.func.isRequired,
+      deleteNote: PropTypes.func.isRequired
     };
   }
 
+  componentWillMount() {
+    const {fetchNotes, notesUrl} = this.props;
+    fetchNotes(notesUrl);
+  }
+
   render() {
+    const {deleteNote} = this.props;
     const notes = this.props.notes.map((note, i) => (
-      <Note key={i} {...note} />
+      <Note key={i} {...note} onCloseClick={deleteNote} />
     ));
 
     return (
