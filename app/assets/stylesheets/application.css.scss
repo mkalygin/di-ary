@@ -36,8 +36,9 @@
   .navbar-nav {
     margin-bottom: 0;
 
-    .write-note-btn {
+    .header-btn {
       @extend .btn-success;
+      @extend .text-center;
 
       font-weight: bolder;
 

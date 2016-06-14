@@ -1,4 +1,6 @@
 import { Component, PropTypes } from 'react';
+import HeaderLink from '../components/header-link';
+import Header from '../components/header';
 import Note from './note';
 
 export default class NoteList extends Component {
@@ -9,6 +11,12 @@ export default class NoteList extends Component {
       fetchNotes: PropTypes.func.isRequired,
       deleteNote: PropTypes.func.isRequired
     };
+  }
+
+  get headerLinks() {
+    return [
+      <HeaderLink to="/edit">Write a note</HeaderLink>,
+    ];
   }
 
   componentWillMount() {
@@ -23,8 +31,13 @@ export default class NoteList extends Component {
     ));
 
     return (
-      <div className="note-list">
-        {notes}
+      <div>
+        <Header>
+          {this.headerLinks}
+        </Header>
+        <div className="note-list">
+          {notes}
+        </div>
       </div>
     );
   }
