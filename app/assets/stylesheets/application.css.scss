@@ -41,6 +41,7 @@
       @extend .text-center;
 
       font-weight: bolder;
+      margin: 1px;
 
       &:hover, &:active, &:focus {
         background-color: darken($brand-success, 10%) !important;
