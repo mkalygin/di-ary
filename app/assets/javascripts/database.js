@@ -1,14 +1,27 @@
-export function save(key, data) {
+export function saveJson(key, data) {
+  return save(key, data, true);
+}
+
+export function loadJson(key, fallback = {}) {
+  return load(key, fallback, true);
+}
+
+export function save(key, data, isJson = false) {
   try {
-    localStorage.setItem(key, JSON.stringify(data));
+    localStorage.setItem(key, isJson ? JSON.stringify(data) : data);
+    return true;
   } catch (err) {
     console.error(err);
     return false;
   }
-  return true;
 }
 
-export function load(key, fallback = {}) {
-  const data = localStorage.getItem(key);
-  return data ? JSON.parse(data) : fallback;
+export function load(key, fallback = {}, isJson = false) {
+  try {
+    const data = localStorage.getItem(key) || fallback;
+    return isJson ? JSON.parse(data) : data;
+  } catch (err) {
+    console.log(err);
+    return undefined;
+  }
 }

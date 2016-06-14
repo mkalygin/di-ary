@@ -41,3 +41,43 @@ export function deleteNote(id) {
     id
   };
 }
+
+export function editCurrentNote(text) {
+  return {
+    type: ActionType.EDIT_CURRENT_NOTE,
+    text
+  };
+}
+
+export function requestCurrentNote() {
+  return {
+    type: ActionType.REQUEST_CURRENT_NOTE
+  };
+}
+
+export function receiveCurrentNote(currentNote) {
+  return {
+    type: ActionType.RECEIVE_CURRENT_NOTE,
+    currentNote
+  };
+}
+
+export function clearCurrentNote() {
+  return {
+    type: ActionType.CLEAR_CURRENT_NOTE
+  };
+}
+
+export function fetchCurrentNote(url) {
+  return (dispatch) => {
+    dispatch(requestCurrentNote());
+
+    return Promise.resolve({})
+      .then((response) => {
+        dispatch(receiveCurrentNote(response.data));
+      })
+      .catch((response) => {
+        console.error(response);
+      });
+  };
+}
